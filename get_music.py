@@ -26,9 +26,9 @@ for page in PAGES:
             song_name = (re.sub(r'^/listen/[0-9]*/', '', str(link.get('href'))))
             song_name = (re.sub(r'%20-%20', ' - ', song_name))
 
-            song_distination = 'music/' + str(song_name)
-            if not Path(song_distination).is_file():
+            song_destination = 'music/' + str(song_name)
+            if not Path(song_destination).is_file():
                 try:
-                    urllib.request.urlretrieve(song_url, song_distination)
+                    urllib.request.urlretrieve(song_url, song_destination)
                 except:
                     print (song_url)
